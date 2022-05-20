@@ -9,7 +9,7 @@ function DrawerNavigator() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        sceneContentStyle: {
+        sceneContainerStyle: {
           backgroundColor: "#3f2f25",
         },
         headerStyle: {
