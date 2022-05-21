@@ -1,9 +1,10 @@
+import { Provider } from "react-redux";
+import { store } from "./store/redux/store";
 import { StatusBar } from "expo-status-bar";
 import MealDetailScreen from "./screens/MealDetailScreen";
 import DrawerNavigator from "./components/DrawerNavigator";
 import MealOverviewScreen from "./screens/MealOverviewScreen";
 import { NavigationContainer } from "@react-navigation/native";
-import FavoritesContextProvider from "./store/context/favorites";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
@@ -12,7 +13,7 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <FavoritesContextProvider>
+      <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
@@ -48,7 +49,7 @@ export default function App() {
             />
           </Stack.Navigator>
         </NavigationContainer>
-      </FavoritesContextProvider>
+      </Provider>
     </>
   );
 }
